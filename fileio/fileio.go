@@ -5,6 +5,7 @@ package fileio
 import (
 	"fmt"
 	"os"
+	"reflect"
 )
 
 // FIle I/O using os package
@@ -21,7 +22,7 @@ func CreateFile() {
 	data := []byte("Hello World")
 	file.Write(data)
 
-	file2, err := os.Create("stringFile")
+	file2, err := os.Create("/home/carlosngv/newFile.go")
 	if err != nil {
 		panic(err)
 	}
@@ -42,9 +43,20 @@ func ReadFile() {
 	}
 
 	fmt.Println("SIZE:", fileInfo.Size())
+	fmt.Println("TYPE:", reflect.TypeOf(fileInfo.Size()))
 	defer file.Close()
 	data := make([]byte, fileInfo.Size())
 	file.Read(data) // Reads the data from file to byte array
 	fmt.Println("The data is", string(data))
 
+}
+
+// ChangePermission exported
+func ChangePermission() {
+	err := os.Chmod("stringFile", 0777) // Gives user, groups and others file permissions.
+	if err != nil {
+		panic(err)
+	} else {
+		fmt.Println("Permissions changed!")
+	}
 }

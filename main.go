@@ -2,25 +2,24 @@ package main
 
 import (
 	"fmt"
-	"go-course/1_files/fileio"
-	"go-course/1_files/filemng"
-	"go-course/1_files/ice"
+	"go-example/fileio"
 	_ "os"
 	_ "time"
 )
 
 func main() {
-	fmt.Println("\n---- Interface Example -------")
+	/*fmt.Println("\n---- Interface Example -------")
 	ice.GenCar()
 
 	fmt.Println("\n---- File Creation Example -------")
-	filemng.CreateFile()
+	filemng.CreateFile()*/
 
 	fmt.Println("\n---- File I/O Example -------")
 	fileio.CreateFile()
 	fileio.ReadFile()
+	//fileio.ChangePermission()
 
-	grades := []int{122, 23, 432}
+	/*grades := []int{122, 23, 432}
 	value := grades[1:] // first 2 elements
 	slice1 := make([]int, 3, 100)
 
@@ -53,9 +52,11 @@ func main() {
 
 	fmt.Println("-------- STRUCT --------")
 	man := Man{"Carlos", 12, "Male", Job{"Apple", "Developer", 45000}}
-	fmt.Println(man)
+	fmt.Println(man)*/
 
 }
+
+/*
 
 type Job struct {
 	company  string
@@ -69,3 +70,4 @@ type Man struct {
 	gender string
 	Job
 }
+*/
